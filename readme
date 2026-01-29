@@ -1,0 +1,12 @@
+## Запуск
+
+```bash
+docker compose up --build
+```
+
+## Порты / URL
+
+- Backend API: `http://localhost:7878`
+- Swagger UI: `http://localhost:7878/docs`
+- Redoc: `http://localhost:7878/redoc`
+- Frontend: `http://localhost:7879`
