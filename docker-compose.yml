@@ -25,6 +25,8 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
       POSTGRES_DB: ${POSTGRES_DB:-secunda}
       DB_ECHO: ${DB_ECHO:-false}
+      # backend стартует в screen-сессии `secunda_api` (см. scripts/start.sh)
+      USE_SCREEN: ${USE_SCREEN:-1}
     depends_on:
       postgres:
         condition: service_healthy

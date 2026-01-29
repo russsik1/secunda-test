@@ -4,6 +4,18 @@
 docker compose up --build
 ```
 
+При первом запуске контейнера `api` автоматически выполняется:
+- миграции: `alembic upgrade head`
+- генерация тестовых данных: `python -m scripts.data_gen` (через `scripts/data_gen.sh`)
+
+Вручную запустить миграции + генерацию можно так:
+
+```bash
+docker compose exec api bash -lc "bash ./scripts/data_gen.sh"
+```
+
+Backend запускается **в screen-сессии** `secunda_api` (переменная `USE_SCREEN=1` в `docker-compose.yml`).
+
 ## Порты / URL
 
 - Backend API: `http://localhost:7878`
